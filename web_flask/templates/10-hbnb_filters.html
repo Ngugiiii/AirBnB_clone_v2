@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HBNB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-header.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-footer.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/4-common.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/6-filters.css') }}" type="text/css">
+</head>
+<body>
+    <header class="top_header">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="HBNB" class="logo">
+        <nav>
+            <ul class="top_menu">
+                <li><a href="#">Places to stay</a></li>
+                <li><a href="#">Offers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="filters">
+        <h1>Places</h1>
+        <section class="locations">
+            <h3>&nbsp;</h3>
+            <ul class="states">
+                {% for state in states %}
+                <li class="filter_state">{{ state.name }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="locations">
+            <h3>&nbsp;</h3>
+            <ul class="cities">
+                {% for city in cities %}
+                <li class="filter_city">{{ city.name }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="locations">
+            <h3>&nbsp;</h3>
+            <ul class="amenities">
+                {% for amenity in amenities %}
+                <li class="filter_amenities">{{ amenity.name }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+    <div class="places">
+        <h1>Places</h1>
+        <section class="places_section">
+            <article class="place_card">
+                <div class="place_image"></div>
+                <div class="place_description">
+                    <h2>City Name</h2>
+                    <p>Place description</p>
+                    <div class="price_by_night">$100/night</div>
+                </div>
+            </article>
+        </section>
+    </div>
+    <div class="reviews">
+        <h2 class="section_title">Reviews</h2>
+        <article class="review">
+            <h3>Review Title</h3>
+            <p>Review text goes here</p>
+        </article>
+    </div>
+    <footer class="footer">
+        <p>Footer content goes here</p>
+    </footer>
+</body>
+</html>
+
